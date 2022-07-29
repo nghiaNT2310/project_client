@@ -1,0 +1,75 @@
+.divPart{
+    width: 49%;
+    display: inline-block;
+    margin: 0.5%;
+}
+
+.icon:hover{
+    color: white
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0,0,0,0.6);
+  
+  }
+  
+  .modal_inner_big{
+    width: 800px;
+    height: 400px;
+    position: relative;
+    top: 20%;
+    margin: auto;
+    background: white;
+    overflow: auto;
+    border-radius: 10px;
+  }
+  
+  .modal_header_2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    background: white;
+    color: rgb(94, 255, 0);
+    font-style: italic;
+    font-weight: bolder;
+    height: 40px;
+    margin-left: 5px;
+  }
+  
+  
+  
+  .modal_body{
+    padding: 15px 0px;
+    margin: 5px;
+   
+  }
+  
+  .modal_body input{
+    height: 30px;
+    width: 90%;
+    margin-bottom: 5px;
+    border-radius: 10px;
+  }
+  .modal_body .input-submit{
+    margin: 0 0;
+    background-color: var(--text-color);
+    color: var(--black-color);
+    height: 30px;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 80px;
+    margin-left: 5px;
+    margin-top: 5px;
+  }
+  
+
+  
+  
+ 
