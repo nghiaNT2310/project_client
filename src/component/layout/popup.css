@@ -19,7 +19,7 @@
     top: 35%;
     margin: auto;
     background: white;
-    height: 100px;
+    height: 150px;
     border-radius: 10px;
     border: 1px black;
   }
@@ -55,4 +55,9 @@
     width: 80px;
     margin-left: 5px;
     /* text-align: center; */
+  }
+
+  .checkbox{
+    display: inline-block;
+    width: 10%;
   }

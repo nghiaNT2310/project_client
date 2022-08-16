@@ -82,6 +82,11 @@ function AddLockerForUser(props){
     const [label,setLabel]=useState("")
     const [controlDevice,setControlDevice]=useState("")
     const [lockers,setLockers]=useState(props.lockers)
+    const [check,setCheck]=useState(false)
+    var changeCheck=()=>{
+      if(check) setCheck(false)
+      else setCheck(true)
+    }
 
     var SetFloor=(event)=>{
         setFloor(event.target.value)
@@ -111,6 +116,11 @@ function AddLockerForUser(props){
                 &&(!label||(l.label.toUpperCase().includes(label.toUpperCase())))
         }))
         
+        }
+
+        var pushLockerToUser=()=>{
+          props.pushLockerToUser(check);
+          setCheck(false);
         }
       return(
         <div className="modal">
@@ -184,7 +194,11 @@ function AddLockerForUser(props){
               </tbody>
             </table>
             <div>
-                <input type="submit" value="Add" className="input-submit"  onClick={props.pushLockerToUser}/>
+            <br/>
+            <input className="checkbox" style={{width: '10%', display:'inline-block'}} type="checkbox" checked={check} onChange={changeCheck}/>
+            Cho phép nhóm nhân viên cũ tiếp tục sử dụng tủ
+            <br/>
+                <input type="submit" value="Add" className="input-submit"  onClick={pushLockerToUser}/>
                  <input onClick={props.setUndisplay}
                                 type="submit"
                                 className="input-submit"

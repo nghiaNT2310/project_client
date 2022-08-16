@@ -9,11 +9,8 @@ class PopupQuetion extends React.Component{
             <div className="modal">
                 <div className="modal_inner_popup">
                     
-                    <div className="modal_body">
-                          
+                    <div className="modal_body">                         
                             {this.props.text}
-                        
-                        
                     </div>
                     <div className="modal_footer_2">
                         <input type="submit" value="OK" className="input-submit"  onClick={this.props.action}/>

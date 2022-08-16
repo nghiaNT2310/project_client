@@ -191,7 +191,7 @@ const MUseLocerApp = () => {
         })})
     }
 
-    var pushLockerToUser=()=>{
+    var pushLockerToUser=(checkn)=>{
       let lockercheck=[];
       locker_user.locker_user.forEach(item=>{
         if(!lockercheck.includes(item.lockerId)){
@@ -213,7 +213,7 @@ const MUseLocerApp = () => {
         return lockercheck.includes(item)
      })
 
-     if(check2){
+     if(check2&&!checkn){
       alert('Thêm không thành công do tồn tại tủ đã có người sử dụng')
       setUndisplay()
      }else {

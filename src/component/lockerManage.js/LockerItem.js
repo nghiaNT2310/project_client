@@ -16,7 +16,8 @@ class LockerItem extends React.Component{
                 <div className='layout_item'  >
                     <p className="lockerItem lockerp1">{this.props.locker.stt}</p>
                     <p className="lockerItem lockerp2">{this.props.locker.label}</p>
-                    <p className="lockerItem lockerp2">{this.props.user_locker.reduce((total,item)=>{
+                    <p className="lockerItem lockerp2">{this.props.locker.user!=""?this.props.locker.user:"tủ trống"}</p>
+                    {/* <p className="lockerItem lockerp2">{this.props.user_locker.reduce((total,item)=>{
                         if(this.props.locker._id==item.lockerId){
                             let res=""
                             this.props.users.forEach((user)=>{
@@ -32,10 +33,11 @@ class LockerItem extends React.Component{
                             this.props.users.forEach((user)=>{
                                 if(user._id==item.userId) res+=user.name+" "+user.ID_Employee
                             })
-                            return total+res
+                            if(total=="") return total+res
+                            else return total
                         }
                         else return total+""
-                    },""):"Tủ trống"}</p>
+                    },""):"Tủ trống"}</p> */}
                     
                 </div>
                 :

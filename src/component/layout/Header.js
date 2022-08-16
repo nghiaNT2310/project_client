@@ -33,7 +33,7 @@ export const Header = (props) => {
                 <ul className={active ?'ul-item':'ul-item oicon'}>
 
                 <li>
-                    <BiHomeAlt className='icon'/>
+                    <BiHomeAlt className='icon'></BiHomeAlt>
                     <Link to='/home'>Home</Link>
                 </li>
 

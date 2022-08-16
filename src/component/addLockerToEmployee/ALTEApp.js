@@ -4,6 +4,7 @@ import Users from './Users';
 import Lockers from './Lockers';
 import qs from 'qs'
 import PopupQuetion from '../layout/PopupQuetion';
+import PopupQuetion2 from '../layout/PopupQuetion2';
 import { AiOutlineCheck ,AiOutlineClose} from "react-icons/ai";
 const ALTEApp = () => {
     const [state, setState] = useState({
@@ -25,6 +26,8 @@ const ALTEApp = () => {
     const [user_locker,setUserLocker]=useState({
       user_locker:[]
     })
+
+    
 
 
     useEffect(() => {
@@ -162,7 +165,8 @@ const ALTEApp = () => {
 
 
 
-    var addLockerTOUser=()=>{
+    var addLockerTOUser=(checkn)=>{
+      console.log("check",checkn)
       let lockercheck=[];
       user_locker.user_locker.forEach(item=>{
         if(!lockercheck.includes(item.lockerId)){
@@ -184,11 +188,11 @@ const ALTEApp = () => {
        let check2=lockers.some(item=>{
           return lockercheck.includes(item)
        })
-       if(users.length>1){
-        alert('Thêm không thành công do Mỗi tủ chỉ được cấp cho một người')
+       if(users.length>1&&!checkn){
+        alert('Thêm không thành công do mỗi tủ chỉ được cấp cho một người')
         setDisplayPopup("none")
        }
-       else if(check2){
+       else if(check2&&!checkn){
         alert('Thêm không thành công do tồn tại tủ đã có người sử dụng')
         setDisplayPopup("none")
        }else {
@@ -222,6 +226,7 @@ const ALTEApp = () => {
               }
               return locker
             })})
+            alert("thêm thành công")
             setDisplayPopup("none")
           })
           .catch(err=>{
@@ -276,7 +281,7 @@ const ALTEApp = () => {
   return (
     <div className='container'>
         <div style={{'display':displayPopup}}>
-          <PopupQuetion unDisplayPopup={unDisplayPopup} action={addLockerTOUser} text={"Bạn chắc muốn thêm tủ cho người dùng"}/>
+          <PopupQuetion2 unDisplayPopup={unDisplayPopup} action={addLockerTOUser} text={"Bạn chắc muốn thêm tủ cho người dùng"}/>
         </div>
         <Users users={state.users} clickBoxUser={clickBoxUser} user_locker={user_locker.user_locker}/>
         <Lockers lockers={locker.lockers} clickBoxLocker={clickBoxLocker} user_locker={user_locker.user_locker} />
